@@ -23,7 +23,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = '';
+
+$explode = explode('/',$_SERVER['REQUEST_URI']);
+
+$config['base_url'] = 'http://'.$_SERVER['HTTP_HOST'].'/'.$explode[1].'/'.$explode[2];
 
 /*
 |--------------------------------------------------------------------------
